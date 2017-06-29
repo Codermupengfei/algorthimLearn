@@ -1,3 +1,5 @@
+import heap.heapSort;
+
 /**
  * Created by OovEver on 2017/6/20.
  */
@@ -9,6 +11,8 @@ public class mainSort {
         int[] a1 = SortTestHelper.copyIntarry(a);
         int[] a2 = SortTestHelper.copyIntarry(a);
         int[] a3 = SortTestHelper.copyIntarry(a);
+        int[] a4 = SortTestHelper.copyIntarry(a);
+        int[] a5 = SortTestHelper.copyIntarry(a);
         long starTime=System.currentTimeMillis();
         SelectSort.selectSort(a);
         long endTime=System.currentTimeMillis();
@@ -27,5 +31,15 @@ public class mainSort {
         assert (SortTestHelper.isSorted(a3));
         endTime=System.currentTimeMillis();
         System.out.println("归并排序"+"程序运行了"+(endTime-starTime)+"ms");
+        starTime=System.currentTimeMillis();
+        heapSort.heapSort1(a4);
+        assert (SortTestHelper.isSorted(a4));
+        endTime=System.currentTimeMillis();
+        System.out.println("堆排序"+"程序运行了"+(endTime-starTime)+"ms");
+        starTime=System.currentTimeMillis();
+        heapSort.heapSort2(a5);
+        assert (SortTestHelper.isSorted(a5));
+        endTime=System.currentTimeMillis();
+        System.out.println("堆排序2"+"程序运行了"+(endTime-starTime)+"ms");
     }
 }
